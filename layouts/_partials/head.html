@@ -27,12 +27,6 @@
 {{- end -}}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}"{{ with $css.Data.Integrity }} integrity="{{ . }}"{{ end }}>
 
-{{/* Apply the stored theme before first paint so the swap never flashes. */}}
-<script>
-(function () {
-  try {
-    var t = localStorage.getItem('theme');
-    document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
-  } catch (e) {}
-})();
-</script>
+{{/* Resolve theme before first paint; the same script wires the native selector. */}}
+{{ $theme := resources.Get "js/theme.js" | minify | fingerprint }}
+<script src="{{ $theme.RelPermalink }}" integrity="{{ $theme.Data.Integrity }}"></script>

@@ -39,9 +39,9 @@ Editing copy never requires touching a template. Add or remove an entry under
 
 - Career logo assets and their sources are in `static/img/brands/`.
 
-- **Theme toggle** switches between dark and light. Dark is the default; a saved
-  preference is applied before first paint. Set `params.themeToggle = false` to
-  hide the toggle.
+- **Theme selector** offers System, Dark, and Light. System is the default and
+  follows OS changes live. Explicit choices persist and apply before first paint.
+  Set `params.themeToggle = false` to hide the selector.
 - The Geist webfont is self-hosted (latin + latin-ext, weights 300/400/500/600). There
   is no request to Google Fonts.
 - CSS is concatenated, minified and fingerprinted with an SRI hash in production.

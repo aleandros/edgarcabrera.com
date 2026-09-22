@@ -1,7 +1,7 @@
-{{ $id := .id | default "hero" }}
+{{ $id := .id | default "layers" }}
 <div class="architecture" aria-hidden="true">
   <div class="architecture__halo"></div>
-  <div class="architecture__scene" {{ if ne $id "layers" }}data-parallax{{ end }}>
+  <div class="architecture__scene">
     <svg viewBox="0 0 620 640" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
       <defs>
         <linearGradient id="{{ $id }}-slab-top" x1="110" y1="150" x2="500" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="var(--art-0)" stop-opacity=".35"/><stop offset="1" stop-color="var(--art-1)" stop-opacity=".8"/></linearGradient>
@@ -22,13 +22,7 @@
       <g><path d="m245 190 65 33 65-33v70l-65 33-65-33Z" fill="var(--art-15)"/><path d="m310 223 65-33v70l-65 33Z" fill="var(--art-16)"/><path d="m245 190 65-33 65 33-65 33Z" fill="url(#{{ $id }}-core-top)" stroke="var(--art-17)"/><path d="M310 223v70" stroke="var(--art-18)" stroke-opacity=".6"/><path d="m270 190 40-20 40 20-40 20Z" stroke="var(--art-19)"/><path d="m297 190 13-7 13 7-13 7Z" fill="var(--art-19)"/></g>
         </g>
       </g>
-      {{ if ne $id "layers" }}
-      <g class="architecture__labels" fill="currentColor" font-family="monospace" font-size="11" letter-spacing="2">
-        <text x="454" y="220">PRODUCT</text><text x="455" y="368">PLATFORM</text><text x="60" y="482">TEAM</text>
-      </g>
-      {{ end }}
       <g stroke="var(--art-22)" stroke-opacity=".5"><path d="M100 145h14m-7-7v14M502 470h14m-7-7v14M450 80h10m-5-5v10"/></g>
     </svg>
   </div>
-  {{ if ne $id "layers" }}<div class="architecture__caption"><span class="status-dot"></span>From first principles. To what’s next.<span class="architecture__index">SCROLL TO BUILD ↓</span></div>{{ end }}
 </div>

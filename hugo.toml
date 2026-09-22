@@ -17,8 +17,8 @@ disableKinds = ['taxonomy', 'term', 'rss']
   tagline = 'MVP development & technical leadership'
   description = 'Build your MVP, strengthen your infrastructure, and grow your engineering team with Edgar Cabrera. Hands-on technical leadership backed by experience at Amazon, Kueski, and as a Y Combinator CTO.'
 
-  # Dark architectural theme by default, with an optional light theme.
-  # Set false to hide the header toggle; dark remains the default.
+  # Follows the system appearance by default; visitors can choose dark or light.
+  # Set false to hide the appearance selector.
   themeToggle = true
 
   # Drop a 1200x630 image at static/img/og.png and set this to '/img/og.png'.

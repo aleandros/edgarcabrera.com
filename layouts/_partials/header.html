@@ -3,8 +3,10 @@
     <a class="header__name" href="#main" aria-label="Edgar Cabrera, home"><span class="monogram" aria-hidden="true">ec<span> /</span></span>{{ site.Title }}</a>
     <nav class="header__nav" aria-label="Main navigation"><a href="#services">How I help</a><a href="#experience">Experience</a></nav>
     <div class="header__actions">
-      {{ if site.Params.themeToggle }}<button class="header__toggle" type="button" data-theme-toggle aria-label="Switch between light and dark"><span data-theme-label>Theme</span></button>{{ end }}
-      <a class="header__cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      {{ if site.Params.themeToggle }}<select class="header__theme" data-theme-select aria-label="Color theme">
+        <option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option>
+      </select>{{ end }}
+      <a class="header__cta" href="#contact">Let’s talk {{ partial "arrow.html" "up-right" }}</a>
     </div>
   </div>
 </header>

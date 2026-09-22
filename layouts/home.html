@@ -7,13 +7,14 @@
     <div class="hero__main">
       <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{{ .eyebrow }}</p>
       <h1 id="hero-heading">{{ .headline }}<br><span>{{ .accent }}</span></h1>
+    </div>
+    <div class="hero__invitation">
       <p class="hero__lede">{{ .lede }}</p>
       <p class="hero__detail">{{ .detail }}</p>
-      <div class="cta-row"><a class="btn" href="{{ $contactURL }}">{{ .cta }} <span aria-hidden="true">↗</span></a></div>
+      <div class="cta-row"><a class="btn" href="{{ $contactURL }}">{{ .cta }} {{ partial "arrow.html" "up-right" }}</a></div>
       <p class="note">{{ .ctaNote }}</p>
-      <a class="text-link hero__explore" href="#layers">{{ .secondary }} <span aria-hidden="true">↓</span></a>
+      <a class="text-link hero__explore" href="#layers">{{ .secondary }} {{ partial "arrow.html" "down" }}</a>
     </div>
-    {{ partial "architecture.html" (dict "id" "hero") }}
   </div>
   <div class="wrap credentials"><span class="eyebrow">Experience I bring to the table</span><ul>{{ range .credentials }}
     <li class="credential">
@@ -43,7 +44,7 @@
 <section class="section services" id="services" aria-labelledby="services-heading"><div class="wrap">
   <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="services-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
   <div class="services__grid">{{ range .items }}
-    <article class="service"><div class="service__top"><span class="service__number">{{ .number }}</span><span class="eyebrow">{{ .stage }}</span><span class="service__mark" aria-hidden="true">↗</span></div>
+    <article class="service"><div class="service__top"><span class="service__number">{{ .number }}</span><span class="eyebrow">{{ .stage }}</span><span class="service__mark">{{ partial "arrow.html" "up-right" }}</span></div>
       <h3>{{ .title }}</h3><p class="service__body">{{ .body }}</p><ul>{{ range .deliverables }}<li>{{ . }}</li>{{ end }}</ul><p class="service__outcome">{{ .outcome }}</p>
     </article>{{ end }}</div>
 </div></section>
@@ -56,12 +57,12 @@
 {{ end }}
 {{ with .Params.process }}
 <section class="section approach" id="approach" aria-labelledby="approach-heading"><div class="wrap approach__layout">
-  <div class="approach__intro"><p class="eyebrow">{{ .eyebrow }}</p><h2 id="approach-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><p class="section-intro">{{ .intro }}</p><div class="approach__signature" aria-hidden="true">Clarity <span>→</span> Momentum <span>→</span> Ownership</div></div>
+  <div class="approach__intro"><p class="eyebrow">{{ .eyebrow }}</p><h2 id="approach-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><p class="section-intro">{{ .intro }}</p><div class="approach__signature" aria-hidden="true">Clarity {{ partial "arrow.html" "right" }} Momentum {{ partial "arrow.html" "right" }} Ownership</div></div>
   <ol class="steps">{{ range $i, $item := .items }}<li><span class="steps__number">0{{ add $i 1 }}</span><div><h3>{{ .title }}</h3><p>{{ .body }}</p></div></li>{{ end }}</ol>
 </div></section>
 {{ end }}
 {{ with .Params.contact }}
-<section class="contact section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact__layout"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="contact-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><div class="contact__body"><p>{{ .body }}</p><a class="btn" href="{{ $contactURL }}">{{ .cta }} <span aria-hidden="true">↗</span></a><p class="note">{{ .note }}</p><a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></div></div></section>
+<section class="contact section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact__layout"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="contact-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><div class="contact__body"><p>{{ .body }}</p><a class="btn" href="{{ $contactURL }}">{{ .cta }} {{ partial "arrow.html" "up-right" }}</a><p class="note">{{ .note }}</p><a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></div></div></section>
 {{ end }}
-<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><span>Built with purpose. Ready for what’s next.</span><a href="{{ site.Params.linkedinURL }}" rel="me noopener">LinkedIn ↗</a></footer>
+<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><span>Built with purpose. Ready for what’s next.</span><a href="{{ site.Params.linkedinURL }}" rel="me noopener">LinkedIn {{ partial "arrow.html" "up-right" }}</a></footer>
 {{ end }}
