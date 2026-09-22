@@ -1,0 +1,38 @@
+{{- $title := cond .IsHome (printf "%s — %s" site.Title site.Params.tagline) (printf "%s — %s" .Title site.Title) -}}
+{{- $desc := or .Params.description site.Params.description -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta name="twitter:card" content="{{ if site.Params.ogImage }}summary_large_image{{ else }}summary{{ end }}">
+{{- with site.Params.ogImage }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{- end }}
+
+{{/* Self-hosted Geist (latin + latin-ext, 300/400/500/600) — no third-party
+     font request. Preload the two weights above the fold. */}}
+<link rel="preload" href="{{ "fonts/geist-500-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/geist-400-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+
+{{- $css := slice (resources.Get "css/fonts.css") (resources.Get "css/main.css") | resources.Concat "css/site.css" -}}
+{{- if hugo.IsProduction -}}
+  {{- $css = $css | minify | fingerprint -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}"{{ with $css.Data.Integrity }} integrity="{{ . }}"{{ end }}>
+
+{{/* Apply the stored theme before first paint so the swap never flashes. */}}
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('theme');
+    document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
+  } catch (e) {}
+})();
+</script>

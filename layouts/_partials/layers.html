@@ -1,0 +1,24 @@
+{{ with .Params.layers }}
+<section class="section layers" id="layers" aria-labelledby="layers-heading" data-stack-story>
+  <div class="wrap">
+    <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="layers-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
+    <div class="layers__layout">
+      <div class="layers__visual">
+        {{ partial "architecture.html" (dict "id" "layers") }}
+        <div class="layers__legend" aria-label="Explore the three layers">
+          {{ range .items }}<a href="#layer-{{ .key }}" data-layer-link="{{ .key }}"><span>{{ .number }}</span> {{ .label }}</a>{{ end }}
+        </div>
+        <div class="layers__track" aria-hidden="true"><span></span></div>
+      </div>
+      <div class="layers__chapters">
+        {{ range .items }}
+        <article class="layer-chapter" id="layer-{{ .key }}" data-layer-chapter="{{ .key }}">
+          <p class="eyebrow">{{ .number }} / {{ .kicker }}</p>
+          <h3>{{ .title }}</h3><p class="layer-chapter__body">{{ .body }}</p><p class="layer-chapter__detail">{{ .detail }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

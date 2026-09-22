@@ -1,0 +1,10 @@
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="header__name" href="#main" aria-label="Edgar Cabrera, home"><span class="monogram" aria-hidden="true">ec<span> /</span></span>{{ site.Title }}</a>
+    <nav class="header__nav" aria-label="Main navigation"><a href="#services">How I help</a><a href="#experience">Experience</a></nav>
+    <div class="header__actions">
+      {{ if site.Params.themeToggle }}<button class="header__toggle" type="button" data-theme-toggle aria-label="Switch between light and dark"><span data-theme-label>Theme</span></button>{{ end }}
+      <a class="header__cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</header>

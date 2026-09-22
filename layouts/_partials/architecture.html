@@ -1,0 +1,34 @@
+{{ $id := .id | default "hero" }}
+<div class="architecture" aria-hidden="true">
+  <div class="architecture__halo"></div>
+  <div class="architecture__scene" {{ if ne $id "layers" }}data-parallax{{ end }}>
+    <svg viewBox="0 0 620 640" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+      <defs>
+        <linearGradient id="{{ $id }}-slab-top" x1="110" y1="150" x2="500" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="var(--art-0)" stop-opacity=".35"/><stop offset="1" stop-color="var(--art-1)" stop-opacity=".8"/></linearGradient>
+        <linearGradient id="{{ $id }}-slab-side" x1="110" y1="0" x2="510" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="var(--art-2)"/><stop offset="1" stop-color="var(--art-3)"/></linearGradient>
+        <linearGradient id="{{ $id }}-core-top" x1="245" y1="195" x2="375" y2="260" gradientUnits="userSpaceOnUse"><stop stop-color="var(--art-4)"/><stop offset="1" stop-color="var(--art-5)"/></linearGradient>
+        <pattern id="{{ $id }}-micro-grid" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="matrix(1 .5 -1 .5 310 75)"><path d="M26 0H0V26" stroke="var(--art-6)" stroke-opacity=".16"/></pattern>
+        <filter id="{{ $id }}-core-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="20"/></filter>
+      </defs>
+      <g stroke="var(--art-7)" stroke-opacity=".2"><path d="M20 425 310 280 600 425 310 570Z"/><path d="M20 465 310 320 600 465M75 397V492M545 397V492M130 370V520M490 370V520"/><path d="M310 70V575" stroke-dasharray="4 8"/></g>
+      <g class="architecture__base" data-stack-layer="team"><path d="m110 410 200-100 200 100v22L310 532 110 432Z" fill="url(#{{ $id }}-slab-side)" stroke="var(--art-8)"/><path d="m110 410 200-100 200 100-200 100Z" fill="url(#{{ $id }}-slab-top)" stroke="var(--art-9)"/><path d="m130 410 180-90 180 90-180 90Z" fill="url(#{{ $id }}-micro-grid)"/><path d="M310 510v22" stroke="var(--art-10)"/></g>
+      <g stroke="var(--art-11)" stroke-opacity=".5" stroke-dasharray="3 7"><path d="M160 285v100M460 285v100M310 360v100M310 210v100"/></g>
+      <g class="architecture__middle" data-stack-layer="infrastructure"><path d="m110 300 200-100 200 100v22L310 422 110 322Z" fill="url(#{{ $id }}-slab-side)" stroke="var(--art-8)"/><path d="m110 300 200-100 200 100-200 100Z" fill="url(#{{ $id }}-slab-top)" stroke="var(--art-12)"/><path d="m130 300 180-90 180 90-180 90Z" fill="url(#{{ $id }}-micro-grid)"/><path d="M310 400v22" stroke="var(--art-10)"/><path d="m155 300 155 77 155-77" stroke="var(--art-13)" stroke-opacity=".65"/></g>
+      <g class="architecture__core" data-stack-layer="product">
+        <path d="m175 225 135-68 135 68v16l-135 68-135-68Z" fill="url(#{{ $id }}-slab-side)" stroke="var(--art-5)"/>
+        <path d="m175 225 135-68 135 68-135 68Z" fill="url(#{{ $id }}-slab-top)" stroke="var(--art-5)"/>
+        <g transform="translate(0 -40)">
+      <ellipse cx="310" cy="253" rx="83" ry="35" fill="var(--art-14)" opacity=".35" filter="url(#{{ $id }}-core-glow)"/>
+      <g><path d="m245 190 65 33 65-33v70l-65 33-65-33Z" fill="var(--art-15)"/><path d="m310 223 65-33v70l-65 33Z" fill="var(--art-16)"/><path d="m245 190 65-33 65 33-65 33Z" fill="url(#{{ $id }}-core-top)" stroke="var(--art-17)"/><path d="M310 223v70" stroke="var(--art-18)" stroke-opacity=".6"/><path d="m270 190 40-20 40 20-40 20Z" stroke="var(--art-19)"/><path d="m297 190 13-7 13 7-13 7Z" fill="var(--art-19)"/></g>
+        </g>
+      </g>
+      {{ if ne $id "layers" }}
+      <g class="architecture__labels" fill="currentColor" font-family="monospace" font-size="11" letter-spacing="2">
+        <text x="454" y="220">PRODUCT</text><text x="455" y="368">PLATFORM</text><text x="60" y="482">TEAM</text>
+      </g>
+      {{ end }}
+      <g stroke="var(--art-22)" stroke-opacity=".5"><path d="M100 145h14m-7-7v14M502 470h14m-7-7v14M450 80h10m-5-5v10"/></g>
+    </svg>
+  </div>
+  {{ if ne $id "layers" }}<div class="architecture__caption"><span class="status-dot"></span>From first principles. To what’s next.<span class="architecture__index">SCROLL TO BUILD ↓</span></div>{{ end }}
+</div>

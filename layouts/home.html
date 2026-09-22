@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ $contactURL := partial "contact-url.html" . }}
+{{ with .Params.hero }}
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap hero__layout">
+    <div class="hero__main">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{{ .eyebrow }}</p>
+      <h1 id="hero-heading">{{ .headline }}<br><span>{{ .accent }}</span></h1>
+      <p class="hero__lede">{{ .lede }}</p>
+      <p class="hero__detail">{{ .detail }}</p>
+      <div class="cta-row"><a class="btn" href="{{ $contactURL }}">{{ .cta }} <span aria-hidden="true">↗</span></a></div>
+      <p class="note">{{ .ctaNote }}</p>
+      <a class="text-link hero__explore" href="#layers">{{ .secondary }} <span aria-hidden="true">↓</span></a>
+    </div>
+    {{ partial "architecture.html" (dict "id" "hero") }}
+  </div>
+  <div class="wrap credentials"><span class="eyebrow">Experience I bring to the table</span><ul>{{ range .credentials }}
+    <li class="credential">
+      <div class="credential__identity">
+        {{ if eq .logo "amazon" }}
+          <img class="credential__amazon credential__amazon--night" src="{{ "img/brands/amazon-dark.svg" | relURL }}" alt="{{ .name }}" width="90" height="27">
+          <img class="credential__amazon credential__amazon--day" src="{{ "img/brands/amazon.svg" | relURL }}" alt="{{ .name }}" width="90" height="27">
+        {{ else if eq .logo "yc" }}
+          <img class="credential__yc" src="{{ "img/brands/y-combinator.svg" | relURL }}" alt="" width="28" height="28"><span>{{ .name }}</span>
+        {{ else }}<span>{{ .name }}</span>{{ end }}
+      </div>
+      <span class="credential__role">{{ .role }}</span>
+    </li>
+  {{ end }}</ul></div>
+</section>
+{{ end }}
+{{ partial "layers.html" . }}
+{{ with .Params.experience }}
+<section class="section experience" id="experience" aria-labelledby="experience-heading"><div class="wrap">
+  <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="experience-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
+  <div class="experience__grid">{{ range .items }}
+    <article class="experience__item"><p class="eyebrow">{{ .company }}</p><p class="experience__result">{{ .result }}</p><h3>{{ .title }}</h3><p class="experience__body">{{ .body }}</p></article>
+  {{ end }}</div>
+</div></section>
+{{ end }}
+{{ with .Params.services }}
+<section class="section services" id="services" aria-labelledby="services-heading"><div class="wrap">
+  <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="services-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
+  <div class="services__grid">{{ range .items }}
+    <article class="service"><div class="service__top"><span class="service__number">{{ .number }}</span><span class="eyebrow">{{ .stage }}</span><span class="service__mark" aria-hidden="true">↗</span></div>
+      <h3>{{ .title }}</h3><p class="service__body">{{ .body }}</p><ul>{{ range .deliverables }}<li>{{ . }}</li>{{ end }}</ul><p class="service__outcome">{{ .outcome }}</p>
+    </article>{{ end }}</div>
+</div></section>
+{{ end }}
+{{ with .Params.about }}
+<section class="section about" id="about" aria-labelledby="about-heading"><div class="wrap about__layout">
+  <div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="about-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><aside class="about__belief"><h3>{{ .belief }}</h3><p>{{ .beliefBody }}</p></aside></div>
+  <div class="about__body">{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}</div>
+</div></section>
+{{ end }}
+{{ with .Params.process }}
+<section class="section approach" id="approach" aria-labelledby="approach-heading"><div class="wrap approach__layout">
+  <div class="approach__intro"><p class="eyebrow">{{ .eyebrow }}</p><h2 id="approach-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><p class="section-intro">{{ .intro }}</p><div class="approach__signature" aria-hidden="true">Clarity <span>→</span> Momentum <span>→</span> Ownership</div></div>
+  <ol class="steps">{{ range $i, $item := .items }}<li><span class="steps__number">0{{ add $i 1 }}</span><div><h3>{{ .title }}</h3><p>{{ .body }}</p></div></li>{{ end }}</ol>
+</div></section>
+{{ end }}
+{{ with .Params.contact }}
+<section class="contact section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact__layout"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="contact-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><div class="contact__body"><p>{{ .body }}</p><a class="btn" href="{{ $contactURL }}">{{ .cta }} <span aria-hidden="true">↗</span></a><p class="note">{{ .note }}</p><a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></div></div></section>
+{{ end }}
+<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><span>Built with purpose. Ready for what’s next.</span><a href="{{ site.Params.linkedinURL }}" rel="me noopener">LinkedIn ↗</a></footer>
+{{ end }}

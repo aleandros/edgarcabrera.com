@@ -1,0 +1,31 @@
+baseURL = 'https://edgarcabrera.com/'
+locale = 'en-us'
+title = 'Edgar Cabrera'
+
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term', 'rss']
+
+[params]
+  # ---- Content to confirm before launch (see design_handoff README) ----
+  # Primary CTAs use email until a booking URL is configured. Replace "#" with a
+  # scheduling link (Cal.com / SavvyCal / Google Calendar appointment page).
+  bookingURL = 'https://calendar.proton.me/u/1/bookings#RBB4jRe63YTrhN1odFSV62BhAjUVxSP6F1g8Tn2zx-I='
+  email = 'edgar.cabrera@pm.me'
+  linkedinURL = 'https://www.linkedin.com/in/edgarcabrera-dev/'
+  linkedinLabel = 'linkedin.com/in/edgarcabrera-dev'
+
+  tagline = 'MVP development & technical leadership'
+  description = 'Build your MVP, strengthen your infrastructure, and grow your engineering team with Edgar Cabrera. Hands-on technical leadership backed by experience at Amazon, Kueski, and as a Y Combinator CTO.'
+
+  # Dark architectural theme by default, with an optional light theme.
+  # Set false to hide the header toggle; dark remains the default.
+  themeToggle = true
+
+  # Drop a 1200x630 image at static/img/og.png and set this to '/img/og.png'.
+  # ogImage = '/img/og.png'
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[minify]
+  minifyOutput = true

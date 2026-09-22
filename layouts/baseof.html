@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en-us" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  {{ partial "header.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ if site.Params.themeToggle }}{{ partial "theme-toggle-script.html" . }}{{ end }}
+  {{ $motion := resources.Get "js/motion.js" | minify | fingerprint }}
+  <script src="{{ $motion.RelPermalink }}" integrity="{{ $motion.Data.Integrity }}" defer></script>
+</body>
+</html>
