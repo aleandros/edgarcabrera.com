@@ -6,8 +6,8 @@ enableRobotsTXT = true
 disableKinds = ['taxonomy', 'term', 'rss']
 
 [params]
-  # Primary CTAs use email until a booking URL is configured. Replace "#" with a
-  # scheduling link (Cal.com / SavvyCal / Google Calendar appointment page).
+  # /calendar/ redirects to this scheduling link; booking CTAs use /calendar/.
+  # Leave empty or use "#" to fall back to email.
   bookingURL = 'https://calendar.proton.me/u/1/bookings#RBB4jRe63YTrhN1odFSV62BhAjUVxSP6F1g8Tn2zx-I='
   email = 'hello@edgarcabrera.com'
   linkedinURL = 'https://www.linkedin.com/in/edgarcabrera-dev/'

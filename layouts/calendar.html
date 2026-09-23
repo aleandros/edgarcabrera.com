@@ -1,0 +1,33 @@
+{{ define "head" }}
+  <meta name="robots" content="noindex">
+  {{/* Keep preview crawlers on this page. Browsers redirect via JavaScript;
+       visitors without JavaScript can use the booking button. */}}
+{{ end }}
+
+{{ define "main" }}
+{{ $bookingURL := site.Params.bookingURL }}
+{{ $hasBooking := and $bookingURL (ne $bookingURL "#") }}
+<section class="hero calendar" aria-labelledby="calendar-heading">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap calendar__layout">
+    <div class="calendar__content">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Let’s start a conversation</p>
+      <h1 id="calendar-heading">Let’s find<br><span>a time.</span></h1>
+      {{ if $hasBooking }}
+      <p class="hero__lede" role="status">Opening my booking calendar…</p>
+      <p class="hero__detail">Choose a time that works for you. We’ll talk about what you’re building and where I can help.</p>
+      <div class="cta-row"><a class="btn" href="{{ $bookingURL }}">Continue to calendar {{ partial "arrow.html" "up-right" }}</a></div>
+      <p class="note">If you’re not redirected automatically, use the button above.</p>
+      {{ else }}
+      <p class="hero__lede">A good conversation is a good place to start.</p>
+      <p class="hero__detail">Email me a little about what you’re building, and we’ll find a time to talk.</p>
+      <div class="cta-row"><a class="btn" href="{{ partial "contact-url.html" . }}">Email me {{ partial "arrow.html" "up-right" }}</a></div>
+      {{ end }}
+      <div class="calendar__signature"><span>{{ site.Title }}</span><span>Fractional CTO &amp; platform engineering</span></div>
+    </div>
+  </div>
+</section>
+{{ if $hasBooking }}
+<script>window.location.replace({{ $bookingURL }});</script>
+{{ end }}
+{{ end }}

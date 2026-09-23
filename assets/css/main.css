@@ -219,3 +219,17 @@ h3 { font-weight: 500; font-size: 25px; line-height: 1.25; letter-spacing: -.03e
   .header__name .monogram { display: none; }
   .header__name { font-size: 11px; }
 }
+
+/* The booking handoff shares the site's typography, colors, and theme. */
+.calendar { background: radial-gradient(ellipse at 75% 60%, var(--contact-glow), transparent 65%); }
+.calendar__layout { display: grid; align-items: center; min-height: calc(100svh - 91px); padding-block: clamp(48px, 8vh, 96px); }
+.calendar__content { width: min(100%, 640px); margin-inline: auto; }
+.calendar h1 { font-size: clamp(56px, 7vw, 88px); }
+.calendar .hero__detail { max-width: 440px; }
+.calendar__signature { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 12px; }
+.calendar__signature span:first-child { color: var(--ink); }
+@media (max-width: 760px) {
+  .calendar__layout { min-height: calc(100svh - 75px); }
+  .calendar h1 { font-size: clamp(56px, 12vw, 76px); }
+  .calendar__signature { margin-top: 36px; }
+}

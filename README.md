@@ -28,8 +28,16 @@ chapters live in `layers.items` and correspond to the animated illustration.
 
 ## Before launch
 
-- The booking URL is configured in `hugo.toml`. Primary CTAs use email when this
-  is empty or `#`.
+- Share `https://edgarcabrera.com/calendar` for bookings. The `/calendar/` page
+  redirects to `params.bookingURL` in `hugo.toml`, and all booking CTAs use the
+  internal URL. Change that setting to switch calendar providers. If it is empty
+  or `#`, CTAs and the calendar page offer email instead.
+- The calendar has its own sharing title, description, and image configured in
+  `content/calendar.md`. Its 1200×630 preview is `static/img/calendar-og.png`,
+  with editable source in `assets/social/calendar-og.html`. Capture the source
+  at 1200×630 and 1× scale after the fonts load to regenerate the PNG.
+  The calendar redirects with JavaScript so preview crawlers can read its
+  metadata; visitors without JavaScript can use the visible booking button.
 - Experience copy uses Edgar’s first-hand account. Keep approximate figures
   approximate; the AcerosVS tenure spans consulting and employment.
 - Contact email, LinkedIn, and availability are configured in `hugo.toml`.
