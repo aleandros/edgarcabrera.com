@@ -6,23 +6,23 @@ enableRobotsTXT = true
 disableKinds = ['taxonomy', 'term', 'rss']
 
 [params]
-  # ---- Content to confirm before launch (see design_handoff README) ----
   # Primary CTAs use email until a booking URL is configured. Replace "#" with a
   # scheduling link (Cal.com / SavvyCal / Google Calendar appointment page).
   bookingURL = 'https://calendar.proton.me/u/1/bookings#RBB4jRe63YTrhN1odFSV62BhAjUVxSP6F1g8Tn2zx-I='
-  email = 'edgar.cabrera@pm.me'
+  email = 'hello@edgarcabrera.com'
   linkedinURL = 'https://www.linkedin.com/in/edgarcabrera-dev/'
   linkedinLabel = 'linkedin.com/in/edgarcabrera-dev'
 
-  tagline = 'MVP development & technical leadership'
-  description = 'Build your MVP, strengthen your infrastructure, and grow your engineering team with Edgar Cabrera. Hands-on technical leadership backed by experience at Amazon, Kueski, and as a Y Combinator CTO.'
+  tagline = 'Fractional CTO & platform engineering · ex-Amazon, Y Combinator'
+  description = 'Fractional CTO and platform engineer for growing teams. Hands-on technical leadership from Edgar Cabrera: ex-Amazon, Kueski, LandingAI, and CTO of a Y Combinator company.'
+  availability = 'Taking one engagement now · 10–20 hrs/week · Remote'
 
   # Follows the system appearance by default; visitors can choose dark or light.
   # Set false to hide the appearance selector.
   themeToggle = true
 
-  # Drop a 1200x630 image at static/img/og.png and set this to '/img/og.png'.
-  # ogImage = '/img/og.png'
+  ogImage = '/img/og.png'
+  ogImageAlt = 'Edgar Cabrera — Fractional CTO & platform engineering. ex-Amazon · YC CTO. Experience at Amazon, Y Combinator’s MovingLake, and LandingAI.'
 
 [markup.goldmark.renderer]
   unsafe = true

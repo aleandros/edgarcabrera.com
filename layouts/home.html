@@ -12,8 +12,8 @@
       <p class="hero__lede">{{ .lede }}</p>
       <p class="hero__detail">{{ .detail }}</p>
       <div class="cta-row"><a class="btn" href="{{ $contactURL }}">{{ .cta }} {{ partial "arrow.html" "up-right" }}</a></div>
-      <p class="note">{{ .ctaNote }}</p>
-      <a class="text-link hero__explore" href="#layers">{{ .secondary }} {{ partial "arrow.html" "down" }}</a>
+      <p class="note availability">{{ site.Params.availability }}</p>
+      <a class="text-link hero__explore" href="#services">{{ .secondary }} {{ partial "arrow.html" "down" }}</a>
     </div>
   </div>
   <div class="wrap credentials"><span class="eyebrow">Experience I bring to the table</span><ul>{{ range .credentials }}
@@ -24,6 +24,8 @@
           <img class="credential__amazon credential__amazon--day" src="{{ "img/brands/amazon.svg" | relURL }}" alt="{{ .name }}" width="90" height="27">
         {{ else if eq .logo "yc" }}
           <img class="credential__yc" src="{{ "img/brands/y-combinator.svg" | relURL }}" alt="" width="28" height="28"><span>{{ .name }}</span>
+        {{ else if .logo }}
+          <img class="credential__wordmark credential__wordmark--{{ .logo }}" src="{{ printf "img/brands/%s.svg" .logo | relURL }}" alt="{{ .name }}" width="120" height="32">
         {{ else }}<span>{{ .name }}</span>{{ end }}
       </div>
       <span class="credential__role">{{ .role }}</span>
@@ -31,7 +33,6 @@
   {{ end }}</ul></div>
 </section>
 {{ end }}
-{{ partial "layers.html" . }}
 {{ with .Params.experience }}
 <section class="section experience" id="experience" aria-labelledby="experience-heading"><div class="wrap">
   <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="experience-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
@@ -40,19 +41,11 @@
   {{ end }}</div>
 </div></section>
 {{ end }}
-{{ with .Params.services }}
-<section class="section services" id="services" aria-labelledby="services-heading"><div class="wrap">
-  <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="services-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
-  <div class="services__grid">{{ range .items }}
-    <article class="service"><div class="service__top"><span class="service__number">{{ .number }}</span><span class="eyebrow">{{ .stage }}</span><span class="service__mark">{{ partial "arrow.html" "up-right" }}</span></div>
-      <h3>{{ .title }}</h3><p class="service__body">{{ .body }}</p><ul>{{ range .deliverables }}<li>{{ . }}</li>{{ end }}</ul><p class="service__outcome">{{ .outcome }}</p>
-    </article>{{ end }}</div>
-</div></section>
-{{ end }}
+{{ partial "layers.html" . }}
 {{ with .Params.about }}
 <section class="section about" id="about" aria-labelledby="about-heading"><div class="wrap about__layout">
   <div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="about-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><aside class="about__belief"><h3>{{ .belief }}</h3><p>{{ .beliefBody }}</p></aside></div>
-  <div class="about__body">{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}</div>
+  <div class="about__body">{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}{{ with .stack }}<p class="tech-stack"><span class="eyebrow">Tools I work with</span>{{ . }}</p>{{ end }}</div>
 </div></section>
 {{ end }}
 {{ with .Params.process }}
@@ -62,7 +55,9 @@
 </div></section>
 {{ end }}
 {{ with .Params.contact }}
-<section class="contact section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact__layout"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="contact-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><div class="contact__body"><p>{{ .body }}</p><a class="btn" href="{{ $contactURL }}">{{ .cta }} {{ partial "arrow.html" "up-right" }}</a><p class="note">{{ .note }}</p><a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></div></div></section>
+<section class="contact section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact__layout"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="contact-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2>
+  {{ with $.Params.testimonial }}<figure class="testimonial"><blockquote><p>“{{ .quote }}”</p></blockquote><figcaption><strong>{{ .author }}</strong><span>{{ .role }}</span></figcaption></figure>{{ end }}
+</div><div class="contact__body"><p>{{ .body }}</p><p class="note availability">{{ site.Params.availability }}</p><a class="btn" href="{{ $contactURL }}">{{ .cta }} {{ partial "arrow.html" "up-right" }}</a><p class="note">{{ .note }}</p><a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></div></div></section>
 {{ end }}
 <footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><span>Built with purpose. Ready for what’s next.</span><a href="{{ site.Params.linkedinURL }}" rel="me noopener">LinkedIn {{ partial "arrow.html" "up-right" }}</a></footer>
 {{ end }}

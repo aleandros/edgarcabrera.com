@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Edgar Cabrera — social preview source</title>
+<style>
+@font-face { font-family: Geist; src: url('../../static/fonts/geist-400-latin.woff2'); font-weight: 400; }
+@font-face { font-family: Geist; src: url('../../static/fonts/geist-500-latin.woff2'); font-weight: 500; }
+* { box-sizing: border-box; }
+body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #0b1324; color: #edf3ff; font-family: Geist, sans-serif; padding: 62px 72px; position: relative; }
+body::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(#96bfff09 1px,transparent 1px),linear-gradient(90deg,#96bfff09 1px,transparent 1px); background-size: 60px 60px; z-index: -1; }
+.top { display: flex; justify-content: space-between; align-items: center; color: #91a5c3; font-size: 19px; }
+.name { color: #edf3ff; font-size: 29px; font-weight: 500; letter-spacing: -.7px; }
+h1 { font-size: 64px; line-height: 1.1; font-weight: 500; letter-spacing: -2.8px; margin: 46px 0 20px; }
+h1 span { color: #85b5ff; }
+.proof { font-size: 27px; color: #f2bd79; margin: 0; }
+.bottom { position: absolute; bottom: 58px; left: 72px; right: 72px; border-top: 1px solid #2b3a53; padding-top: 30px; display: flex; align-items: center; gap: 48px; }
+.amazon { width: 125px; }
+.yc { display: flex; align-items: center; gap: 12px; font-size: 23px; }
+.yc img { width: 36px; height: 36px; }
+.landing { width: 155px; filter: brightness(0) invert(1); }
+.label { margin-left: auto; color: #91a5c3; font-size: 14px; line-height: 1.5; text-align: right; }
+</style>
+<div class="top"><span class="name">Edgar Cabrera</span><span>edgarcabrera.com</span></div>
+<h1>Fractional CTO<br><span>&amp; platform engineering.</span></h1>
+<p class="proof">ex-Amazon · YC CTO</p>
+<div class="bottom">
+  <img class="amazon" src="../../static/img/brands/amazon-dark.svg" alt="Amazon">
+  <span class="yc"><img src="../../static/img/brands/y-combinator.svg" alt="">Y Combinator</span>
+  <img class="landing" src="../../static/img/brands/landingai.svg" alt="LandingAI">
+  <span class="label">Hands-on leadership.<br>Built for growing teams.</span>
+</div>
+</html>

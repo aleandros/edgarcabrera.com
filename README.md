@@ -15,25 +15,30 @@ hugo --gc --minify # production build into public/
 
 | What | Where |
 |---|---|
-| **All page copy** (hero, experience, services, about, process, contact) | `content/_index.md` front matter |
-| Identity + booking link + toggles | `hugo.toml` `[params]` |
+| **All page copy** (hero, experience, layers/services, about, process, testimonial, contact) | `content/_index.md` front matter |
+| Identity + availability + booking link + toggles | `hugo.toml` `[params]` |
+| Social preview image + editable source | `static/img/og.png` + `assets/social/og.html` |
 | Design tokens and all styling | `assets/css/main.css` |
 | Self-hosted Geist webfont | `assets/css/fonts.css` + `static/fonts/` |
 | Page structure | `layouts/home.html`, `layouts/baseof.html`, `layouts/_partials/` |
 
 Editing copy never requires touching a template. Add or remove an entry under
-`experience.items`, `services.items`, or `process.items` and the grid follows.
+`experience.items` or `process.items` and the layout follows. The three service
+chapters live in `layers.items` and correspond to the animated illustration.
 
 ## Before launch
 
-- [ ] Optionally set `params.bookingURL` in `hugo.toml`. Primary CTAs use email
-      when this is empty or `#`.
+- The booking URL is configured in `hugo.toml`. Primary CTAs use email when this
+  is empty or `#`.
 - Experience copy uses Edgar’s first-hand account. Keep approximate figures
   approximate; the AcerosVS tenure spans consulting and employment.
-- Contact email and LinkedIn are configured in `hugo.toml`.
-- [ ] Produce a 1200×630 OG image, drop it at `static/img/og.png`, and uncomment
-      `params.ogImage`.
-- [ ] Set the real `baseURL`.
+- Contact email, LinkedIn, and availability are configured in `hugo.toml`.
+  Update availability when the open engagement is filled.
+- The 1200×630 social preview is configured for Open Graph and Twitter cards.
+  To edit it, update `assets/social/og.html`, open it in a browser, wait for the
+  local fonts and logos to load, and capture a 1200×630 viewport at 1× scale to
+  `static/img/og.png`. The PNG is committed; Hugo does not need a browser to build.
+- `baseURL` is set to `https://edgarcabrera.com/`.
 
 ## Notes
 

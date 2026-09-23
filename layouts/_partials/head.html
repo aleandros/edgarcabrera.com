@@ -14,7 +14,15 @@
 <meta name="twitter:card" content="{{ if site.Params.ogImage }}summary_large_image{{ else }}summary{{ end }}">
 {{- with site.Params.ogImage }}
 <meta property="og:image" content="{{ . | absURL }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ site.Params.ogImageAlt }}">
+<meta name="twitter:image" content="{{ . | absURL }}">
+<meta name="twitter:image:alt" content="{{ site.Params.ogImageAlt }}">
 {{- end }}
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
 
 {{/* Self-hosted Geist (latin + latin-ext, 300/400/500/600) — no third-party
      font request. Preload the two weights above the fold. */}}
