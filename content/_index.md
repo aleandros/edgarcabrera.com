@@ -82,6 +82,7 @@ about:
     - "As co-founder and CTO of MovingLake, a Y Combinator company, I built real-time data integration technology with Rust, Go, and Kafka. At Andrew Ng’s LandingAI, I helped design and implement infrastructure for large-scale machine learning inference. Those experiences inform how I approach data systems and AI today."
     - "My foundation is electrical engineering at Tecnológico de Monterrey, Campus Ciudad de México, where I graduated with the highest GPA in my program. My career since has taken me from early-stage companies to Amazon, with consulting work alongside operating roles."
   stack: "Rust · Go · Kafka · AWS · React"
+  projectsLink: "Explore my open-source projects"
   belief: "Build the people, too."
   beliefBody: "Good leadership gives people clear expectations, honest feedback, and room to grow. I want the engineers I work with to become more confident, capable, and ready to take ownership. That’s part of the work, every bit as much as the software."
 process:

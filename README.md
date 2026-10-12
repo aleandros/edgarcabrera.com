@@ -1,6 +1,6 @@
 # edgarcabrera.com
 
-One-page consulting site built with [Hugo](https://gohugo.io), using a navy and amber
+Consulting site with an open-source projects page, built with [Hugo](https://gohugo.io), using a navy and amber
 palette, light/dark themes, and an SVG architectural illustration. The original
 design handoff is retained in `design_handoff_edgar_cabrera_site/` for reference.
 
@@ -15,16 +15,20 @@ hugo --gc --minify # production build into public/
 
 | What | Where |
 |---|---|
-| **All page copy** (hero, experience, layers/services, about, process, testimonial, contact) | `content/_index.md` front matter |
+| **Home page copy** (hero, experience, layers/services, about, process, testimonial, contact) | `content/_index.md` front matter |
+| Open-source project descriptions and repository links | `content/projects.md` front matter |
 | Identity + availability + booking link + toggles | `hugo.toml` `[params]` |
 | Social preview image + editable source | `static/img/og.png` + `assets/social/og.html` |
 | Design tokens and all styling | `assets/css/main.css` |
 | Self-hosted Geist webfont | `assets/css/fonts.css` + `static/fonts/` |
-| Page structure | `layouts/home.html`, `layouts/baseof.html`, `layouts/_partials/` |
+| Page structure | `layouts/home.html`, `layouts/projects.html`, `layouts/baseof.html`, `layouts/_partials/` |
 
 Editing copy never requires touching a template. Add or remove an entry under
 `experience.items` or `process.items` and the layout follows. The three service
 chapters live in `layers.items` and correspond to the animated illustration.
+The `/projects/` page is linked from the home page navigation and About section.
+Add or remove entries under `projects` in `content/projects.md` to update the
+project grid; the GitHub profile link is configured in `hugo.toml`.
 
 ## Before launch
 

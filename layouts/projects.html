@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="hero projects" aria-labelledby="projects-heading">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap projects__intro">
+    <p class="eyebrow">{{ .Params.eyebrow }}</p>
+    <h1 id="projects-heading">{{ .Params.heading }}<br><span>{{ .Params.accent }}</span></h1>
+    <p class="hero__lede">{{ .Params.intro }}</p>
+    <div class="cta-row"><a class="btn" href="{{ site.Params.githubURL }}" rel="me">{{ .Params.profileLabel }} {{ partial "arrow.html" "up-right" }}</a></div>
+  </div>
+  <div class="wrap projects__grid">
+    {{ range $index, $project := .Params.projects }}
+    <article class="project" aria-labelledby="project-{{ $index }}">
+      <div class="project__meta"><span class="project__number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span><p class="eyebrow">{{ .category }}</p></div>
+      <h2 id="project-{{ $index }}"><a href="{{ .url }}">{{ .name }} {{ partial "arrow.html" "up-right" }}</a></h2>
+      <p class="project__description">{{ .description }}</p>
+      <p class="project__stack">{{ .stack }}</p>
+      <a class="text-link project__link" href="{{ .url }}" aria-label="View {{ .name }} on GitHub">View on GitHub {{ partial "arrow.html" "up-right" }}</a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><a href="{{ site.Home.RelPermalink }}">Back to home {{ partial "arrow.html" "right" }}</a><a href="{{ site.Params.githubURL }}" rel="me">GitHub / {{ site.Params.githubLabel }} {{ partial "arrow.html" "up-right" }}</a></footer>
+{{ end }}

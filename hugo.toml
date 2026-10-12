@@ -12,6 +12,8 @@ disableKinds = ['taxonomy', 'term', 'rss']
   email = 'hello@edgarcabrera.com'
   linkedinURL = 'https://www.linkedin.com/in/edgarcabrera-dev/'
   linkedinLabel = 'linkedin.com/in/edgarcabrera-dev'
+  githubURL = 'https://github.com/aleandros'
+  githubLabel = 'aleandros'
 
   tagline = 'Fractional CTO & platform engineering · ex-Amazon, Y Combinator'
   description = 'Fractional CTO and platform engineer for growing teams. Hands-on technical leadership from Edgar Cabrera: ex-Amazon, Kueski, LandingAI, and CTO of a Y Combinator company.'

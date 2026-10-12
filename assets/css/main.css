@@ -233,3 +233,30 @@ h3 { font-weight: 500; font-size: 25px; line-height: 1.25; letter-spacing: -.03e
   .calendar h1 { font-size: clamp(56px, 12vw, 76px); }
   .calendar__signature { margin-top: 36px; }
 }
+
+/* Open-source projects share the site's palette and typography. */
+.header__nav a[aria-current="page"] { color: var(--accent); }
+.about__projects { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; margin-top: 18px; color: var(--accent); font-size: 14px; }
+.projects { padding-bottom: 80px; }
+.projects__intro { padding-block: 80px 64px; }
+.projects h1 { font-size: clamp(48px, 6vw, 80px); }
+.projects .hero__lede { max-width: 680px; color: var(--body); }
+.projects__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.project { display: flex; flex-direction: column; padding: 36px 40px 28px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--bg); }
+.project__meta { display: flex; align-items: center; gap: 16px; }
+.project__number { color: var(--accent); font-size: 12px; }
+.project h2 { font-size: clamp(32px, 3.4vw, 44px); margin-top: 26px; }
+.project h2 a { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.project h2 a:hover { color: var(--accent); }
+.project h2 .icon-arrow { width: 26px; height: 26px; color: var(--accent); }
+.project__description { margin-top: 20px; max-width: 480px; color: var(--body); font-size: 15px; }
+.project__stack { margin-top: auto; padding-top: 26px; color: var(--muted); font-size: 12px; }
+.project__link { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 52px; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--rule); color: var(--accent); font-size: 13px; }
+@media (max-width: 760px) {
+  .projects { padding-bottom: 48px; }
+  .projects__intro { padding-block: 52px 40px; }
+  .projects__grid { grid-template-columns: 1fr; }
+  .project { padding: 28px 24px 20px; }
+  .project__meta .eyebrow { font-size: 10px; }
+  .projects .hero__lede { font-size: 18px; }
+}

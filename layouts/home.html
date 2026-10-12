@@ -45,7 +45,7 @@
 {{ with .Params.about }}
 <section class="section about" id="about" aria-labelledby="about-heading"><div class="wrap about__layout">
   <div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="about-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><aside class="about__belief"><h3>{{ .belief }}</h3><p>{{ .beliefBody }}</p></aside></div>
-  <div class="about__body">{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}{{ with .stack }}<p class="tech-stack"><span class="eyebrow">Tools I work with</span>{{ . }}</p>{{ end }}</div>
+  <div class="about__body">{{ range .paragraphs }}<p>{{ . }}</p>{{ end }}{{ with .stack }}<p class="tech-stack"><span class="eyebrow">Tools I work with</span>{{ . }}</p>{{ end }}{{ with site.GetPage "/projects" }}<a class="text-link about__projects" href="{{ .RelPermalink }}">{{ $.Params.about.projectsLink }} {{ partial "arrow.html" "right" }}</a>{{ end }}</div>
 </div></section>
 {{ end }}
 {{ with .Params.process }}
