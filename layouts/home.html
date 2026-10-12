@@ -12,6 +12,7 @@
       <p class="hero__lede">{{ .lede }}</p>
       <p class="hero__detail">{{ .detail }}</p>
       <div class="cta-row"><a class="btn" href="{{ $contactURL }}">{{ .cta }} {{ partial "arrow.html" "up-right" }}</a></div>
+      {{ with .ctaNote }}<p class="note hero__cta-note">{{ . }}</p>{{ end }}
       <p class="note availability">{{ site.Params.availability }}</p>
       <a class="text-link hero__explore" href="#services">{{ .secondary }} {{ partial "arrow.html" "down" }}</a>
     </div>
@@ -33,6 +34,7 @@
   {{ end }}</ul></div>
 </section>
 {{ end }}
+{{ partial "layers.html" . }}
 {{ with .Params.experience }}
 <section class="section experience" id="experience" aria-labelledby="experience-heading"><div class="wrap">
   <div class="section-heading"><div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="experience-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2></div><p class="section-intro">{{ .intro }}</p></div>
@@ -41,7 +43,6 @@
   {{ end }}</div>
 </div></section>
 {{ end }}
-{{ partial "layers.html" . }}
 {{ with .Params.about }}
 <section class="section about" id="about" aria-labelledby="about-heading"><div class="wrap about__layout">
   <div><p class="eyebrow">{{ .eyebrow }}</p><h2 id="about-heading">{{ .heading | replaceRE "\n" "<br>" | safeHTML }}</h2><aside class="about__belief"><h3>{{ .belief }}</h3><p>{{ .beliefBody }}</p></aside></div>
