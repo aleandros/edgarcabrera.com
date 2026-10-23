@@ -65,6 +65,10 @@ project grid; the GitHub profile link is configured in `hugo.toml`.
 
 ## GitHub Pages
 
+`.github/workflows/ci.yaml` runs a Hugo production build on pull requests to
+`main`, so changes can be validated before merging. The check uses the same Hugo
+version as deployment and has no deployment permissions.
+
 `.github/workflows/pages.yaml` builds with Hugo 0.165.0 and deploys on pushes to
 `main`. In repository Settings → Pages, select **GitHub Actions** as the source.
 The workflow uses the URL reported by GitHub Pages, so repository subpaths and
