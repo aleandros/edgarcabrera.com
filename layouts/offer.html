@@ -1,0 +1,114 @@
+{{ define "main" }}
+{{ $contactURL := partial "contact-url.html" . }}
+<section class="hero offer" aria-labelledby="offer-heading">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap offer__intro">
+    <p class="eyebrow">{{ .Params.eyebrow }}</p>
+    <h1 id="offer-heading">{{ .Params.heading }}<br><span>{{ .Params.accent }}</span></h1>
+    <p class="hero__lede">{{ .Params.intro }}</p>
+    <dl class="offer__meta">
+      <div>
+        <dt class="eyebrow">Investment</dt>
+        <dd>{{ .Params.pricing.price }}</dd>
+      </div>
+      <div>
+        <dt class="eyebrow">Duration</dt>
+        <dd>{{ .Params.pricing.duration }}</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap offer__body">
+  {{ with .Params.audience }}
+  <section class="offer__block" aria-labelledby="offer-audience">
+    <p class="eyebrow">01</p>
+    <h2 id="offer-audience">{{ .heading }}</h2>
+    <p>{{ .body }}</p>
+  </section>
+  {{ end }}
+
+  {{ with .Params.problem }}
+  <section class="offer__block" aria-labelledby="offer-problem">
+    <p class="eyebrow">02</p>
+    <h2 id="offer-problem">{{ .heading }}</h2>
+    <p>{{ .body }}</p>
+  </section>
+  {{ end }}
+
+  {{ with .Params.scope }}
+  <section class="offer__block offer__scope" aria-labelledby="offer-scope">
+    <p class="eyebrow">03</p>
+    <h2 id="offer-scope">{{ .heading }}</h2>
+    <div class="offer__scope-grid">
+      <div>
+        <h3>{{ .includedHeading }}</h3>
+        <ul>{{ range .included }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+      <div>
+        <h3>{{ .excludedHeading }}</h3>
+        <ul class="offer__excluded">{{ range .excluded }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with .Params.deliverable }}
+  <section class="offer__block" aria-labelledby="offer-deliverable">
+    <p class="eyebrow">04</p>
+    <h2 id="offer-deliverable">{{ .heading }}</h2>
+    <p>{{ .body }}</p>
+  </section>
+  {{ end }}
+
+  {{ with .Params.timeline }}
+  <section class="offer__block offer__timeline" aria-labelledby="offer-timeline">
+    <p class="eyebrow">05</p>
+    <h2 id="offer-timeline">{{ .heading }}</h2>
+    {{ with .intro }}<p>{{ . }}</p>{{ end }}
+    {{ with .body }}<p>{{ . }}</p>{{ end }}
+    {{ with .weeks }}
+    <ol class="offer__weeks">
+      {{ range . }}
+      <li>
+        <span class="offer__week-label">{{ .label }}</span>
+        <div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  {{ with .Params.pricing }}
+  <section class="offer__block offer__pricing" aria-labelledby="offer-pricing">
+    <p class="eyebrow">06</p>
+    <h2 id="offer-pricing">{{ .heading }}</h2>
+    <p class="offer__price">{{ .price }}</p>
+    <p class="offer__pricing-note">{{ .note }}</p>
+  </section>
+  {{ end }}
+</div>
+
+{{ with .Params.cta }}
+<section class="contact section offer__cta" aria-labelledby="offer-cta-heading">
+  <div class="wrap contact__layout">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2 id="offer-cta-heading">{{ .heading }}</h2>
+    </div>
+    <div class="contact__body">
+      <p>{{ .body }}</p>
+      <a class="btn" href="{{ $contactURL }}">{{ .button }} {{ partial "arrow.html" "up-right" }}</a>
+      <p class="note">{{ .note }}</p>
+      <a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><a href="{{ site.Home.RelPermalink }}">Back to home {{ partial "arrow.html" "right" }}</a>{{ partial "social-links.html" (dict) }}</footer>
+{{ end }}

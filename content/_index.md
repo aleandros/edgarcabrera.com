@@ -1,14 +1,15 @@
 ---
 title: "Edgar Cabrera — Fractional CTO & platform engineering · ex-Amazon, Y Combinator"
 hero:
-  eyebrow: "Fractional CTO · Platform engineer · Team builder"
-  headline: "A CTO’s judgment,"
-  accent: "without the full-time hire."
-  lede: "If engineering feels slower, riskier, or harder to see into than it should, I can help. I’ve built the infrastructure behind a 100-developer fintech, cut Amazon Device OS’ release lead time from days to hours, and run engineering as CTO of a Y Combinator company."
-  detail: "I join a few companies at a time, hands-on, 10–20 hours a week. You get a CTO’s judgment and someone who still writes the code."
+  eyebrow: "Fractional CTO · Traditional industry · AI engineering"
+  headline: "Traditional industry."
+  accent: "Distributed systems. Applied AI."
+  lede: "Most technical leaders know software or industry operations — rarely both. I’ve built the infrastructure behind a 100-developer fintech, cut Amazon Device OS’ release lead time from days to hours, designed ML infrastructure at LandingAI, and I put that same stack to work inside manufacturing and other traditional businesses."
+  detail: "I join a few companies at a time, hands-on, 10–20 hours a week. You get someone who has shipped distributed systems and AI — and who understands how traditional industries actually run."
   cta: "Talk it through · 30 min"
   ctaNote: "No prep, no pitch. You’ll leave with a clearer picture of your options either way."
   secondary: "See the problems I help with"
+  offerLink: "Fixed-price AI diagnostic"
   credentials:
     - name: "Amazon"
       role: "Device OS engineering"
@@ -107,4 +108,6 @@ contact:
   body: "Tell me what you’re building and where it’s stuck. In 30 minutes you’ll have an outside read on it, whether or not we work together."
   cta: "Talk it through · 30 min"
   note: "Not ready for a call? Email me the problem in three lines."
+  offerPrompt: "Running a traditional-industry company and wondering where AI belongs?"
+  offerLink: "See the fixed-price AI diagnostic"
 ---
