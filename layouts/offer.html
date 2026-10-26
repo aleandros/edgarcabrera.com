@@ -102,7 +102,7 @@
     </div>
     <div class="contact__body">
       <p>{{ .body }}</p>
-      <a class="btn" href="{{ $contactURL }}">{{ .button }} {{ partial "arrow.html" "up-right" }}</a>
+      <div class="cta-row"><a class="btn" href="{{ $contactURL }}">{{ .button }} {{ partial "arrow.html" "up-right" }}</a></div>
       <p class="note">{{ .note }}</p>
       <a class="contact__email" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
     </div>
