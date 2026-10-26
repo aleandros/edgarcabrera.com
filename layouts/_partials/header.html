@@ -1,7 +1,7 @@
 <header class="header">
   <div class="wrap header__inner">
     <a class="header__name" href="{{ if .IsHome }}#main{{ else }}{{ site.Home.RelPermalink }}{{ end }}" aria-label="Edgar Cabrera, home"><span class="monogram" aria-hidden="true">ec<span> /</span></span>{{ site.Title }}</a>
-    <nav class="header__nav" aria-label="Main navigation"><a href="{{ if not .IsHome }}{{ site.Home.RelPermalink }}{{ end }}#services">How I help</a><a href="{{ if not .IsHome }}{{ site.Home.RelPermalink }}{{ end }}#experience">Experience</a>{{ with site.GetPage "/projects" }}<a class="header__projects" href="{{ .RelPermalink }}"{{ if eq $.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>Open source</a>{{ end }}</nav>
+    <nav class="header__nav" aria-label="Main navigation"><a href="{{ if not .IsHome }}{{ site.Home.RelPermalink }}{{ end }}#services">How I help</a><a href="{{ if not .IsHome }}{{ site.Home.RelPermalink }}{{ end }}#experience">Experience</a>{{ with site.GetPage "/ai-diagnostic" }}<a href="{{ .RelPermalink }}"{{ if eq $.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>AI diagnostic</a>{{ end }}{{ with site.GetPage "/projects" }}<a class="header__projects" href="{{ .RelPermalink }}"{{ if eq $.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>Open source</a>{{ end }}</nav>
     <div class="header__actions">
       {{ if site.Params.themeToggle }}<select class="header__theme" data-theme-select aria-label="Color theme">
         <option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option>
