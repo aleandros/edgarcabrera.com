@@ -13,7 +13,7 @@
       </div>
       <div>
         <dt class="eyebrow">Duration</dt>
-        <dd>{{ .Params.pricing.duration | default "[DURACIÓN TBD]" }}</dd>
+        <dd>{{ .Params.pricing.duration }}</dd>
       </div>
     </dl>
   </div>
@@ -62,10 +62,24 @@
   {{ end }}
 
   {{ with .Params.timeline }}
-  <section class="offer__block" aria-labelledby="offer-timeline">
+  <section class="offer__block offer__timeline" aria-labelledby="offer-timeline">
     <p class="eyebrow">05</p>
     <h2 id="offer-timeline">{{ .heading }}</h2>
-    <p>{{ .body }}</p>
+    {{ with .intro }}<p>{{ . }}</p>{{ end }}
+    {{ with .body }}<p>{{ . }}</p>{{ end }}
+    {{ with .weeks }}
+    <ol class="offer__weeks">
+      {{ range . }}
+      <li>
+        <span class="offer__week-label">{{ .label }}</span>
+        <div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+    {{ end }}
   </section>
   {{ end }}
 

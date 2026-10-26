@@ -287,6 +287,13 @@ h3 { font-weight: 500; font-size: 25px; line-height: 1.25; letter-spacing: -.03e
 .offer__excluded li::before { content: "–"; }
 .offer__price { margin-top: 18px; font-size: clamp(28px, 3.2vw, 44px); letter-spacing: -.04em; font-weight: 500; color: var(--accent); }
 .offer__pricing-note { margin-top: 14px; color: var(--muted); font-size: 14px; max-width: 520px; }
+.offer__weeks { list-style: none; margin: 28px 0 0; padding: 0; max-width: 680px; }
+.offer__weeks li { display: flex; gap: 24px; padding-block: 22px; border-top: 1px solid var(--rule); }
+.offer__weeks li:first-child { border-top: 0; padding-top: 0; }
+.offer__weeks li:last-child { padding-bottom: 0; }
+.offer__week-label { flex-shrink: 0; width: 4.5rem; color: var(--accent); font-size: 12px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; padding-top: 5px; }
+.offer__weeks h3 { font-size: 20px; max-width: none; }
+.offer__weeks p { margin-top: 10px; color: var(--body); font-size: 14px; max-width: 520px; }
 .offer__cta { border-top: 1px solid var(--rule); }
 @media (max-width: 760px) {
   .offer__intro { padding-block: 52px 32px; }
