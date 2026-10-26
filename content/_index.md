@@ -29,7 +29,7 @@ hero:
 layers:
   eyebrow: "01 / How I can help"
   heading: "Technical leadership.\nHands-on delivery."
-  intro: "Most founders come to me in one of three situations. Here’s what I do about each."
+  intro: "Operations, engineering, and technology leaders at traditional-industry companies — manufacturing, distribution, logistics, industrial — usually come to me in one of three situations. Here’s what I do about each."
   items:
     - key: "team"
       label: "Team"
@@ -43,15 +43,15 @@ layers:
       number: "02"
       kicker: "Releases are slow and things keep breaking."
       title: "Ship faster, with fewer surprises."
-      body: "Slow releases, fragile infrastructure, and manual work are eating your team’s time. I work in the systems alongside your engineers to improve delivery, reliability, and security — including the data and ML infrastructure behind your AI products."
+      body: "Slow releases, fragile infrastructure, and manual work are eating your team’s time. I work in the systems alongside your engineers to improve delivery, reliability, and security — including the data and ML infrastructure behind the tools your operation depends on."
       detail: "Architecture · Deployment automation · Data & ML systems"
     - key: "product"
       label: "Product"
       number: "03"
-      kicker: "You need something real in front of customers."
-      title: "Build the smallest thing that proves the idea."
-      body: "Define the smallest useful product and build it together. From MVPs to data integrations and internal tools, I stay close to the code and focused on what your business needs to learn or deliver next."
-      detail: "MVP scope · Hands-on development · Integrations"
+      kicker: "You need a working tool in the operation, not another slide deck."
+      title: "Build the smallest thing that earns its place."
+      body: "Define the smallest useful system and build it together — an internal tool, a data integration, a workflow that removes manual work. I stay close to the code and focused on what the business needs to run better next."
+      detail: "Scope · Hands-on development · Integrations"
 # Experience and figures below are based on Edgar's first-hand account.
 # Payment share is approximate; the AcerosVS relationship includes consulting and employment.
 # Keep revenue refers to the payment channel Edgar led, not overall company revenue.

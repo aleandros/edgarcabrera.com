@@ -49,7 +49,7 @@ pricing:
   note: "Fixed price for the diagnostic as scoped above. The full fee is credited against a follow-on engagement that starts within 90 days."
 cta:
   heading: "Want to see if this fits?"
-  body: "Book a 30-minute call and we’ll decide whether this diagnostic — or a different engagement — is the right next step."
+  body: "In 30 minutes we’ll decide whether this diagnostic — or a different engagement — is the right next step."
   button: "Talk it through · 30 min"
-  note: "Prefer email? Send three lines on your business and what you’re trying to decide."
+  note: "Not ready for a call? Email me three lines on your business and what you’re trying to decide."
 ---
