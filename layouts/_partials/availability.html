@@ -1,6 +1,8 @@
 {{- $text := site.Params.availability -}}
-{{- with site.GetPage "/ai-diagnostic" -}}
-<a class="note availability" href="{{ .RelPermalink }}">{{ $text }}</a>
-{{- else -}}
-<p class="note availability">{{ $text }}</p>
-{{- end -}}
+<p class="note availability">
+  {{- with site.GetPage "/ai-diagnostic" -}}
+  <a href="{{ .RelPermalink }}">{{ $text }}</a>
+  {{- else -}}
+  {{ $text }}
+  {{- end -}}
+</p>
