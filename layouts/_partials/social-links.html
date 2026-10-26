@@ -1,0 +1,12 @@
+{{- /* Text social links matching existing LinkedIn / GitHub footer pattern.
+       Call with a dict, e.g. (dict) or (dict "class" "contact__social"). */ -}}
+{{- $class := "footer__social" -}}
+{{- with .class }}{{ $class = . }}{{ end -}}
+<span class="{{ $class }}">
+  {{- with site.Params.linkedinURL -}}
+  <a href="{{ . }}" rel="me noopener">LinkedIn {{ partial "arrow.html" "up-right" }}</a>
+  {{- end -}}
+  {{- with site.Params.xURL -}}
+  <a href="{{ . }}" rel="me noopener">X {{ partial "arrow.html" "up-right" }}</a>
+  {{- end -}}
+</span>

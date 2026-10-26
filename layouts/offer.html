@@ -110,5 +110,5 @@
 </section>
 {{ end }}
 
-<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><a href="{{ site.Home.RelPermalink }}">Back to home {{ partial "arrow.html" "right" }}</a><a href="{{ site.Params.linkedinURL }}" rel="me noopener">LinkedIn {{ partial "arrow.html" "up-right" }}</a></footer>
+<footer class="footer wrap"><span>© {{ now.Year }} {{ site.Title }}</span><a href="{{ site.Home.RelPermalink }}">Back to home {{ partial "arrow.html" "right" }}</a>{{ partial "social-links.html" (dict) }}</footer>
 {{ end }}

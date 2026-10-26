@@ -12,12 +12,14 @@ disableKinds = ['taxonomy', 'term', 'rss']
   email = 'hello@edgarcabrera.com'
   linkedinURL = 'https://www.linkedin.com/in/edgarcabrera-dev/'
   linkedinLabel = 'linkedin.com/in/edgarcabrera-dev'
+  xURL = 'https://x.com/edgarcabrera_'
+  xLabel = 'x.com/edgarcabrera_'
   githubURL = 'https://github.com/aleandros'
   githubLabel = 'aleandros'
 
   tagline = 'Fractional CTO & platform engineering · ex-Amazon, Y Combinator'
   description = 'Hands-on fractional CTO for founders who need senior technical judgment without a full-time hire. Edgar Cabrera: ex-Amazon, Kueski, LandingAI, and CTO of a Y Combinator company.'
-  availability = 'Taking one engagement now · 10–20 hrs/week · Remote'
+  availability = 'Taking one AI diagnostic at a time'
 
   # Follows the system appearance by default; visitors can choose dark or light.
   # Set false to hide the appearance selector.
